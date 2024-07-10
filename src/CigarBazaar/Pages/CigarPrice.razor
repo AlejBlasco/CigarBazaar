@@ -1,0 +1,57 @@
+﻿@page "/cigarprice"
+
+@using Models = CigarBazaar.Shared.Models;
+
+<PageTitle>CigarPrice</PageTitle>
+
+<h1>CigarPrice</h1>
+
+<p>This is a dummy list</p>
+
+<RadzenDataGrid @ref="grid" 
+                @bind-Value=@selectedPrices
+                SelectionMode="DataGridSelectionMode.Single"
+                KeyProperty="Id"
+                IsLoading="@isLoading" 
+                Count="@count" 
+                Data="@prices" 
+                LoadData="@LoadData" 
+                FilterPopupRenderMode="PopupRenderMode.OnDemand" 
+                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+                FilterMode="FilterMode.Advanced" 
+                AllowSorting="true"
+                AllowFiltering="true" 
+                AllowPaging="true" 
+                PageSize="100" 
+                PagerHorizontalAlign="HorizontalAlign.Center"
+                ColumnWidth="200px">
+    <Columns>
+        <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.Id)"
+                              Filterable="false" 
+                              Title="ID" 
+                              Frozen="true" 
+                              Width="50px" 
+                              TextAlign="TextAlign.Center" />
+        <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.Name)"
+                              Filterable="false"
+                              Title="Name"
+                              Frozen="true"
+                              TextAlign="TextAlign.Left" />
+        <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.Price)"
+                              Filterable="false"
+                              Title="Price"
+                              Frozen="true"
+                              TextAlign="TextAlign.Right" />
+        <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.SurchargedPrice)"
+                              Filterable="false"
+                              Title="Surcharged Price"
+                              Frozen="true"
+                              TextAlign="TextAlign.Right" />
+    </Columns>
+    <LoadingTemplate>
+        <RadzenProgressBarCircular ProgressBarStyle="ProgressBarStyle.Primary" 
+                                   Value="100" 
+                                   ShowValue="false" 
+                                   Mode="ProgressBarMode.Indeterminate" />
+    </LoadingTemplate>
+</RadzenDataGrid>

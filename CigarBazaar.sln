@@ -5,17 +5,19 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{68B15D87-CE63-412B-9097-5C972E476DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar.Application", "src\CigarBazaar.Application\CigarBazaar.Application.csproj", "{1E7B0983-70D6-4CD1-9B87-33697E0BF663}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Application", "src\CigarBazaar.Application\CigarBazaar.Application.csproj", "{1E7B0983-70D6-4CD1-9B87-33697E0BF663}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar.Shared", "src\CigarBazaar.Shared\CigarBazaar.Shared.csproj", "{CBB8D438-B92B-4DC1-9919-5F89BE549A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Shared", "src\CigarBazaar.Shared\CigarBazaar.Shared.csproj", "{CBB8D438-B92B-4DC1-9919-5F89BE549A6C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{34989C9A-E32C-4865-B30D-B67616082A4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar.Shared.UnitTest", "test\CigarBazaar.Shared.UnitTest\CigarBazaar.Shared.UnitTest.csproj", "{E3B28DA1-E2C0-4A4E-B74B-94570C409CC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Shared.UnitTest", "test\CigarBazaar.Shared.UnitTest\CigarBazaar.Shared.UnitTest.csproj", "{E3B28DA1-E2C0-4A4E-B74B-94570C409CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar.Application.UnitTest", "test\CigarBazaar.Application.UnitTest\CigarBazaar.Application.UnitTest.csproj", "{BD4E8D46-F6D7-4010-BBF8-85205C518D53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Application.UnitTest", "test\CigarBazaar.Application.UnitTest\CigarBazaar.Application.UnitTest.csproj", "{BD4E8D46-F6D7-4010-BBF8-85205C518D53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar.Dummy", "src\CigarBazaar.Dummy\CigarBazaar.Dummy.csproj", "{61CFF426-C105-46E3-907B-75BCD391E6D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Dummy", "src\CigarBazaar.Dummy\CigarBazaar.Dummy.csproj", "{61CFF426-C105-46E3-907B-75BCD391E6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar", "src\CigarBazaar\CigarBazaar.csproj", "{6EF60559-3450-4311-947B-499D92B3FCC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{61CFF426-C105-46E3-907B-75BCD391E6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61CFF426-C105-46E3-907B-75BCD391E6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61CFF426-C105-46E3-907B-75BCD391E6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF60559-3450-4311-947B-499D92B3FCC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF60559-3450-4311-947B-499D92B3FCC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF60559-3450-4311-947B-499D92B3FCC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF60559-3450-4311-947B-499D92B3FCC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{E3B28DA1-E2C0-4A4E-B74B-94570C409CC7} = {34989C9A-E32C-4865-B30D-B67616082A4A}
 		{BD4E8D46-F6D7-4010-BBF8-85205C518D53} = {34989C9A-E32C-4865-B30D-B67616082A4A}
 		{61CFF426-C105-46E3-907B-75BCD391E6D8} = {68B15D87-CE63-412B-9097-5C972E476DD2}
+		{6EF60559-3450-4311-947B-499D92B3FCC0} = {68B15D87-CE63-412B-9097-5C972E476DD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79142001-665F-40E2-9D54-B32937229337}

@@ -1,5 +1,6 @@
 ﻿using CigarBazaar.Application.Hacienda;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace CigarBazaar.Dummy
 {
@@ -28,9 +29,16 @@ namespace CigarBazaar.Dummy
             var priceList = await priceOfLaborService.GetPriceOfLaborListAsync();
             Console.WriteLine($"Retrieved {priceList.Count} records");
 
+            Console.WriteLine("Saving price list to JSON");
+            var priceSerialized = JsonConvert.SerializeObject(priceList);
+            using (var sw = new StreamWriter("prices.json"))
+            {
+                sw.WriteLine(priceSerialized);
+            }
+            Console.WriteLine($"JSON generated");
+
             Console.ReadKey();
         }
-
 
     }
 }

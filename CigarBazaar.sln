@@ -17,7 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Application.Uni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Dummy", "src\CigarBazaar.Dummy\CigarBazaar.Dummy.csproj", "{61CFF426-C105-46E3-907B-75BCD391E6D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar", "src\CigarBazaar\CigarBazaar.csproj", "{6EF60559-3450-4311-947B-499D92B3FCC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar", "src\CigarBazaar\CigarBazaar.csproj", "{6EF60559-3450-4311-947B-499D92B3FCC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar.Infrastructure", "src\CigarBazaar.Infrastructure\CigarBazaar.Infrastructure.csproj", "{86C2C73F-F8B8-4344-8EBA-8CCB39B18E15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CigarBazaar.Domain", "src\CigarBazaar.Domain\CigarBazaar.Domain.csproj", "{9FD1CBDA-AEDE-4759-981D-BBBFAA10DC42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,14 @@ Global
 		{6EF60559-3450-4311-947B-499D92B3FCC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EF60559-3450-4311-947B-499D92B3FCC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EF60559-3450-4311-947B-499D92B3FCC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C2C73F-F8B8-4344-8EBA-8CCB39B18E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C2C73F-F8B8-4344-8EBA-8CCB39B18E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C2C73F-F8B8-4344-8EBA-8CCB39B18E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C2C73F-F8B8-4344-8EBA-8CCB39B18E15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD1CBDA-AEDE-4759-981D-BBBFAA10DC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD1CBDA-AEDE-4759-981D-BBBFAA10DC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD1CBDA-AEDE-4759-981D-BBBFAA10DC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD1CBDA-AEDE-4759-981D-BBBFAA10DC42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +72,8 @@ Global
 		{BD4E8D46-F6D7-4010-BBF8-85205C518D53} = {34989C9A-E32C-4865-B30D-B67616082A4A}
 		{61CFF426-C105-46E3-907B-75BCD391E6D8} = {68B15D87-CE63-412B-9097-5C972E476DD2}
 		{6EF60559-3450-4311-947B-499D92B3FCC0} = {68B15D87-CE63-412B-9097-5C972E476DD2}
+		{86C2C73F-F8B8-4344-8EBA-8CCB39B18E15} = {68B15D87-CE63-412B-9097-5C972E476DD2}
+		{9FD1CBDA-AEDE-4759-981D-BBBFAA10DC42} = {68B15D87-CE63-412B-9097-5C972E476DD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79142001-665F-40E2-9D54-B32937229337}

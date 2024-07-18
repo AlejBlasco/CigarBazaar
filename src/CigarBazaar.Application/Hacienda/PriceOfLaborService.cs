@@ -73,6 +73,11 @@ public class PriceOfLaborService : IPriceOfLaborService
         if (page != null)
         {
             await page.GoToAsync(urlToScrap);
+
+            await page.SelectAsync("select[name=\"MinPortalTabacosLabor\"]", "Cigarros");
+            await page.ClickAsync("input[type=\"submit\"][name=\"filtrar\"]");
+            await page.WaitForSelectorAsync(tableSelector);
+
             await page.ClickAsync(seeAllSelector);
             await page.WaitForSelectorAsync(tableSelector);
 
@@ -99,13 +104,17 @@ public class PriceOfLaborService : IPriceOfLaborService
                 var columns = row.SelectNodes("td");
                 if (columns != null && columns.Count >= 3)
                 {
-                    var tableItem = new CigarPrice
+                    try
                     {
-                        Name = columns[0].InnerText.Trim(),
-                        Price = Decimal.Parse(columns[1].InnerText.Trim().Replace('.', ',')),
-                        SurchargedPrice = Decimal.Parse(columns[2].InnerText.Trim().Replace('.', ','))
-                    };
-                    tableItems.Add(tableItem);
+                        var tableItem = new CigarPrice
+                        {
+                            Name = columns[0].InnerText.Trim(),
+                            Price = Decimal.Parse(columns[1].InnerText.Trim().Replace('.', ',')),
+                            SurchargedPrice = Decimal.Parse(columns[2].InnerText.Trim().Replace('.', ','))
+                        };
+                        tableItems.Add(tableItem);
+                    }
+                    catch { /* Sometimes, something go wrong with data. */}
                 }
             }
         }

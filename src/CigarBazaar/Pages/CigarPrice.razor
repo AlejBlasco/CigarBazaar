@@ -8,7 +8,7 @@
 
 <p>This is a dummy list</p>
 
-<RadzenDataGrid @ref="grid" 
+@* <RadzenDataGrid @ref="grid" 
                 @bind-Value=@selectedPrices
                 SelectionMode="DataGridSelectionMode.Single"
                 KeyProperty="Id"
@@ -22,30 +22,33 @@
                 AllowSorting="true"
                 AllowFiltering="true" 
                 AllowPaging="true" 
-                PageSize="100" 
+                PageSize="1" 
                 PagerHorizontalAlign="HorizontalAlign.Center"
                 ColumnWidth="200px">
-    <Columns>
+ *@    
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced"
+                AllowGrouping="true" AllowSorting="true" PageSize="@pageSize" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left"
+                Data="@prices" TItem="Models.CigarPrice" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" ShowPagingSummary="true"
+                IsLoading=@isLoading Sort="@ShowLoading" Page="@ShowLoading" Group="@ShowLoading" Filter="@ShowLoading">
+ <Columns>
         <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.Id)"
                               Filterable="false" 
                               Title="ID" 
                               Frozen="true" 
                               Width="50px" 
-                              TextAlign="TextAlign.Center" />
+                              TextAlign="TextAlign.Center"
+                              Visible="false"/>
         <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.Name)"
-                              Filterable="false"
+                              Filterable="true"
                               Title="Name"
-                              Frozen="true"
                               TextAlign="TextAlign.Left" />
         <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.Price)"
-                              Filterable="false"
+                              Filterable="true"
                               Title="Price"
-                              Frozen="true"
                               TextAlign="TextAlign.Right" />
         <RadzenDataGridColumn Property="@nameof(Models.CigarPrice.SurchargedPrice)"
-                              Filterable="false"
+                              Filterable="true"
                               Title="Surcharged Price"
-                              Frozen="true"
                               TextAlign="TextAlign.Right" />
     </Columns>
     <LoadingTemplate>

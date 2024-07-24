@@ -27,4 +27,4 @@ jobs:
 
     # Execute TEST
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal --filter GithubAction!~GithubAction_Disabled

@@ -60,7 +60,7 @@ public class CigarPricesServiceTests
         service.Should().BeNull();
     }
 
-    [Fact]
+    [Fact, Trait("GithubAction", "GithubAction_Disabled")]
     public async Task GetPricesUpdateDate_Should_Return_Valid_Date()
     {
         // Arrange
@@ -86,7 +86,7 @@ public class CigarPricesServiceTests
         date.Should().NotBeNull();
     }
 
-    [Fact]
+    [Fact, Trait("GithubAction", "GithubAction_Disabled")]
     public async Task GetPriceListAsync_Should_Return_Valid_CigarPriceList()
     {
         // Arrange

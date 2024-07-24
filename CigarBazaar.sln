@@ -19,6 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar", "src\CigarBaz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CigarBazaar.Shared.UnitTest", "test\CigarBazaar.Shared.UnitTest\CigarBazaar.Shared.UnitTest.csproj", "{67588DBB-BDAA-4EE0-BC1F-2C254D647617}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{68BC304F-DD24-4122-AA11-12195EF227CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{FB1AC879-09F7-410E-8304-7D1E3B1FE83B}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\run-tests.yml = .github\workflows\run-tests.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +67,7 @@ Global
 		{61CFF426-C105-46E3-907B-75BCD391E6D8} = {68B15D87-CE63-412B-9097-5C972E476DD2}
 		{6EF60559-3450-4311-947B-499D92B3FCC0} = {68B15D87-CE63-412B-9097-5C972E476DD2}
 		{67588DBB-BDAA-4EE0-BC1F-2C254D647617} = {34989C9A-E32C-4865-B30D-B67616082A4A}
+		{FB1AC879-09F7-410E-8304-7D1E3B1FE83B} = {68BC304F-DD24-4122-AA11-12195EF227CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79142001-665F-40E2-9D54-B32937229337}

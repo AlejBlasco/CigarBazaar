@@ -1,11 +1,23 @@
 ﻿using CigarBazaar.Application.CigarPrices;
 using CigarBazaar.Shared.Models;
 using FluentAssertions;
+using Microsoft.Extensions.Configuration;
+using System.Reflection;
 
 namespace CigarBazaar.Application.UnitTest.CigarPrices;
 
 public class CigarPricesServiceTests
 {
+    private readonly IConfiguration config;
+
+    public CigarPricesServiceTests()
+    {
+        config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .AddUserSecrets(Assembly.GetExecutingAssembly(), true)
+            .Build();
+    }
+
     [Fact]
     public void CigarPricesService_Constructor_Should_Not_Fail_If_Configuration_Is_Valid()
     {
@@ -13,7 +25,7 @@ public class CigarPricesServiceTests
         CigarPricesService? service = null;
         CigarPricesConfiguration configuration = new CigarPricesConfiguration
         {
-            UrlToScrap = "https://dummy.es"
+            UrlToScrap = config["CigarPricesConfiguration:UrlToScrap"]
         };
 
         // Act
@@ -48,24 +60,58 @@ public class CigarPricesServiceTests
         service.Should().BeNull();
     }
 
-    [Fact(Skip = "Not setted yet")]
+    [Fact]
     public async Task GetPricesUpdateDate_Should_Return_Valid_Date()
     {
         // Arrange
+        DateTime? date = null;  
+        CigarPricesService? service = null;
+        CigarPricesConfiguration configuration = new CigarPricesConfiguration
+        {
+            UrlToScrap = config["CigarPricesConfiguration:UrlToScrap"]
+        };
 
         // Act
+        var act = async () =>
+        {
+            service = new CigarPricesService(configuration);
+            date = await service.GetPricesUpdateDate();
+        };
 
         // Assert
+        await act.Should().NotThrowAsync<Exception>();
+        
+        service.Should().NotBeNull();
+
+        date.Should().NotBeNull();
     }
 
-    [Fact(Skip = "Not setted yet")]
+    [Fact]
     public async Task GetPriceListAsync_Should_Return_Valid_CigarPriceList()
     {
         // Arrange
+        CigarPriceList? cigarPriceList = null;
+        CigarPricesService? service = null;
+        CigarPricesConfiguration configuration = new CigarPricesConfiguration
+        {
+            UrlToScrap = config["CigarPricesConfiguration:UrlToScrap"]
+        };
 
         // Act
+        var act = async () =>
+        {
+            service = new CigarPricesService(configuration);
+            cigarPriceList = await service.GetPriceListAsync();
+        };
 
         // Assert
+        await act.Should().NotThrowAsync<Exception>();
+
+        service.Should().NotBeNull();
+
+        cigarPriceList.Should().NotBeNull();
+        cigarPriceList?.PricesUpdateDate.Should().NotBeAfter(DateTime.UtcNow);
+        cigarPriceList?.Cigars.Should().NotBeNull();
     }
 
 }

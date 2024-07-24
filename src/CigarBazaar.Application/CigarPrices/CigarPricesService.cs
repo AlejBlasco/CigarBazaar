@@ -19,7 +19,7 @@ public class CigarPricesService : ICigarPricesService
 
         launchOptions = new LaunchOptions
         {
-            Headless = false,
+            Headless = true,
             IgnoredDefaultArgs = new[] { "--disable-extensions" },
             Args = new string[] { }
         };

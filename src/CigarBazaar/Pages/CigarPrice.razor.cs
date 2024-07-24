@@ -24,7 +24,7 @@ public partial class CigarPrice
     private IList<Models.CigarPrice> selectedPrices = new List<Models.CigarPrice>();
     private int count => prices.Count();
 
-    ICigarPricesService service = new CigarPricesService();
+    ICigarPricesService service = null;// new CigarPricesService();
 
     protected override async Task OnInitializedAsync()
     {

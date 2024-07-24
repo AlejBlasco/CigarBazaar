@@ -13,12 +13,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CigarBazaar.Application\CigarBazaar.Application.csproj" />
-    <ProjectReference Include="..\CigarBazaar.Domain\CigarBazaar.Domain.csproj" />
-    <ProjectReference Include="..\CigarBazaar.Infrastructure\CigarBazaar.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

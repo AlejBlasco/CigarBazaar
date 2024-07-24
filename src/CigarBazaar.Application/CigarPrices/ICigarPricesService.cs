@@ -1,8 +1,11 @@
 ﻿using CigarBazaar.Shared.Models;
+using PuppeteerSharp;
 
 namespace CigarBazaar.Application.CigarPrices;
 
 public interface ICigarPricesService
 {
-    Task<List<CigarPrice>> GetPricesFromJsonAsync(string path, CancellationToken cancellationToken = default);
+    Task<DateTime?> GetPricesUpdateDate();
+
+    Task<CigarPriceList> GetPriceListAsync();
 }

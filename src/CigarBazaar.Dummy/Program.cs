@@ -1,4 +1,5 @@
 ﻿using CigarBazaar.Application.CigarPrices;
+using CigarBazaar.Application.Cigars;
 using CigarBazaar.Shared.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,12 +21,32 @@ namespace CigarBazaar.Dummy
             var serviceProvider = new ServiceCollection()
                 .AddSingleton<CigarPricesConfiguration>(new CigarPricesConfiguration { UrlToScrap = config["CigarPricesConfiguration:UrlToScrap"] })
                 .AddSingleton<ICigarPricesService, CigarPricesService>()
+                .AddSingleton<ICigarService, CigarService>()
                 .BuildServiceProvider();
 
-            var service = serviceProvider
-                .GetService<ICigarPricesService>();
+            // Display the menu
+            Console.WriteLine("Please choose an option:");
+            Console.WriteLine("1. Test ICigarPricesService -> GetPriceListAsync");
+            Console.WriteLine("2. Test ICigarService -> GetCigarsAsync");
+            Console.WriteLine("3. Exit");
+            string input = Console.ReadLine() ?? string.Empty;
 
-            var list = await service!.GetPriceListAsync();
+            if (input.Equals("1"))
+            {
+                var cigarPricesService = serviceProvider
+                    .GetService<ICigarPricesService>();
+
+                await cigarPricesService!.GetPriceListAsync();
+            }
+            else if (input.Equals("2"))
+            {
+                var cigarService = serviceProvider
+                    .GetService<ICigarService>();
+
+                await cigarService!.GetCigarsAsync();
+            }
+            else
+                Console.WriteLine("Exiting...");
 
         }
     }
